@@ -10,3 +10,4 @@ print('приветули')
 print ('как далибшки')
 
 print("god why")
+print('dead')
