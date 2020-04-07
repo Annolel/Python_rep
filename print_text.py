@@ -8,3 +8,5 @@ print ('сасатб')
 
 print('приветули')
 print ('как далибшки')
+
+print("god why")
