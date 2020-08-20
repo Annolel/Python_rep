@@ -179,3 +179,120 @@ for x in range (1,16):
     moon_waight="{:.2f}".format(earth_weight*0.165)
     print('year %s - %s' %(x, moon_waight),'kg')
 """
+"""
+def savings(income,income2,spend):
+    return income+income2-spend
+print(savings(10,10,5))
+def spaceship_building(cans):
+    total_cans = 0
+    for week in range(1, 53):
+        total_cans = total_cans + cans
+        print('Week %s = %s cans' % (week, total_cans))
+spaceship_building(5) 
+
+import sys
+def silly_age_joke():
+	print('How old are you?')
+	age = int(sys.stdin.readline())
+	if age >= 10 and age <= 13:
+		print('What is 13 + 49 + 84 + 155 + 97? A headache!')
+	else:
+		print('Huh?')
+silly_age_joke()
+
+def moon_weight():
+    import math
+    import sys
+    print ('Please enter your current Earth weight')
+    earth_weight= int(sys.stdin.readline())
+    print ('Please enter the amount your weight might increase each year')
+    weight_gain= int(sys.stdin.readline())
+    print ('Please enter the number of years')
+    years= int(sys.stdin.readline())
+    print ('You will gain +1 kg every year for %s years. your weight on moon should be next:' % years)
+    moon_weight="{:.2f}".format(earth_weight*0.165)
+    print ('starting waight on earth:',earth_weight,'kg')
+    print('first visit on moon:',moon_weight,'kg')
+    for x in range (1,years+1):
+        earth_weight=earth_weight+weight_gain
+        moon_weight="{:.2f}".format(earth_weight*0.165)
+        print('year %s - %s' %(x, moon_weight),'kg')
+moon_weight()
+
+
+class Giraffes():
+    def left_Foot_Forward(self):
+        print('left foot forward')
+    def left_Foot_Back(self):
+        print('left foot back')
+    def right_Foot_Forward(self):
+        print('right foot forward')
+    def right_Foot_Back(self):
+        print('right foot back')
+    def dance (self):
+        self.left_Foot_Forward()
+        self.left_Foot_Back()
+        self.right_Foot_Forward()
+        self.right_Foot_Back()
+        self.left_Foot_Back()
+Reginald=Giraffes()
+Reginald.dance()
+
+
+import turtle 
+t1=turtle.Pen()
+t2=turtle.Pen()
+t3=turtle.Pen()
+t4=turtle.Pen()
+t1.forward(100)
+t1.left(90)
+t1.forward(50)
+t1.right(90)
+t1.forward(50)
+t2.forward(110)
+t2.left(90)
+t2.forward(20)
+t2.right(90)
+t2.forward(20)
+t3.forward(110)
+t3.right(90)
+t3.forward(20)
+t3.left(90)
+t3.forward(20)
+t4.forward(100)
+t4.right(90)
+t4.forward(50)
+t4.left(90)
+t4.forward(50)
+input()
+
+a = abs(10) + abs(-10)
+print(a)
+b = abs(-10) + -10
+print(b)
+
+def Convert(string): 
+    li = list(string.split(" ")) 
+    return li
+str1 = "this if is you not are a reading very this good then way you to have hide done a it message wrong"
+list_str1 = Convert(str1)
+list_str2=list_str1[::2]
+for i in list_str2:
+    print(i,end=' ')
+"""
+
+filename = input("Enter the name of the file:\n ")
+numline = int(input("Enter the number of lines in the file:\n "))
+f= open(filename,"w+")
+for i in range(0,numline):
+    print("enter the %s line"%(i+1))
+    line = input()
+    f.write(line)
+    if i!=(numline-1):
+        f.write("\n")
+f.close()
+import subprocess as sp
+programName = "notepad.exe"
+sp.Popen([programName, filename])
+print ("\nFile %s created! Opening the file...\n"%(filename))
+input()
