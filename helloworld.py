@@ -296,3 +296,14 @@ programName = "notepad.exe"
 sp.Popen([programName, filename])
 print ("\nFile %s created! Opening the file...\n"%(filename))
 input()
+
+f = open('test.txt')
+s = f.read()
+f.close()
+f = open('output.txt', 'w')
+f.write(s)
+f.close()
+That example works, but actually a better way to copy a file is
+using a Python module called shutil:
+import shutil
+shutil.copy('test.txt', 'output.txt')
