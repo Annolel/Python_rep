@@ -4,6 +4,6 @@ provider "aws" {
   region     = "eu_central-1"
 }
 resource "aws_instance" "my_test_ubuntu" {
-  ami           = ""
-  instance_type = ""
+  ami           = "ami-04932daa2567651e7"
+  instance_type = "t3.micro"
 }
