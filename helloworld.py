@@ -159,8 +159,8 @@ for x in range(0, 20):
 age=1
 while age <= 29:
     print (age)
-    age=age+2 
-#2 loop alternate    
+    age=age+2
+#2 loop alternate
 for x in range (1,30,2):
     print(x)
 
@@ -188,7 +188,7 @@ def spaceship_building(cans):
     for week in range(1, 53):
         total_cans = total_cans + cans
         print('Week %s = %s cans' % (week, total_cans))
-spaceship_building(5) 
+spaceship_building(5)
 
 import sys
 def silly_age_joke():
@@ -239,7 +239,7 @@ Reginald=Giraffes()
 Reginald.dance()
 
 
-import turtle 
+import turtle
 t1=turtle.Pen()
 t2=turtle.Pen()
 t3=turtle.Pen()
@@ -271,8 +271,8 @@ print(a)
 b = abs(-10) + -10
 print(b)
 
-def Convert(string): 
-    li = list(string.split(" ")) 
+def Convert(string):
+    li = list(string.split(" "))
     return li
 str1 = "this if is you not are a reading very this good then way you to have hide done a it message wrong"
 list_str1 = Convert(str1)
@@ -280,7 +280,7 @@ list_str2=list_str1[::2]
 for i in list_str2:
     print(i,end=' ')
 """
-
+"""
 filename = input("Enter the name of the file:\n ")
 numline = int(input("Enter the number of lines in the file:\n "))
 f= open(filename,"w+")
@@ -307,3 +307,21 @@ That example works, but actually a better way to copy a file is
 using a Python module called shutil:
 import shutil
 shutil.copy('test.txt', 'output.txt')
+"""
+class Animal:
+    def __init__(self, species, number_of_legs, color):
+        self.species = species
+        self.number_of_legs = number_of_legs
+        self.color = color
+import copy
+harry = Animal('hippogriff', 6, 'pink')
+harriet = copy.copy(harry)
+print(harry.species)
+print(harriet.species)
+carrie = Animal('chimera', 4, 'green polka dots')
+billy = Animal('bogill', 0, 'paisley')
+my_animals = [harry, carrie, billy]
+more_animals = copy.copy(my_animals)
+print(more_animals[0].species)
+print(more_animals[1].species)
+print(more_animals[2].species)
