@@ -307,7 +307,7 @@ That example works, but actually a better way to copy a file is
 using a Python module called shutil:
 import shutil
 shutil.copy('test.txt', 'output.txt')
-"""
+
 class Animal:
     def __init__(self, species, number_of_legs, color):
         self.species = species
@@ -325,3 +325,28 @@ more_animals = copy.copy(my_animals)
 print(more_animals[0].species)
 print(more_animals[1].species)
 print(more_animals[2].species)
+"""
+
+class Animal:
+    def __init__ (self, species, number_of_legs, color):
+        self.species = species
+        self.number_of_legs = number_of_legs
+        self.color = color
+harry = Animal('hippogriff',6,'pink')
+import copy
+harriet = copy.copy(harry)
+print(harriet.color)
+print(harry.color)
+carrie = Animal('chimera',4,'green polka dots')
+billy = Animal('bogill',0,'paisly')
+my_animals = [harry,carrie,billy]
+print(my_animals[0].species)
+copy_animals = copy.copy(my_animals)
+print(copy_animals[0].species)
+my_animals[0].species = 'ghoul'
+print(my_animals[0].species)
+print(copy_animals[0].species,'\n')
+sally=Animal('dog',4,'brown')
+my_animals.append(sally)
+print(len(my_animals))
+print(len(copy_animals),'\n')
