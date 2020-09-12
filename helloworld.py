@@ -325,7 +325,6 @@ more_animals = copy.copy(my_animals)
 print(more_animals[0].species)
 print(more_animals[1].species)
 print(more_animals[2].species)
-"""
 
 class Animal:
     def __init__ (self, species, number_of_legs, color):
@@ -350,3 +349,35 @@ sally=Animal('dog',4,'brown')
 my_animals.append(sally)
 print(len(my_animals))
 print(len(copy_animals),'\n')
+
+import time
+def lots_of_numbers(max):
+    t1 = time.time()
+    for x in range(0, max):
+        print(x)
+    t2 = time.time()
+    print('it took %s seconds' %(t2-t1))
+lots_of_numbers(1000)
+
+import copy
+class Car:
+    pass
+car1 = Car()
+car1.wheels = 4
+car2 = car1
+car2.wheels = 3
+print(car1.wheels)
+car3 = copy.copy(car1)
+car3.wheels = 6
+print(car1.wheels)
+"""
+import pickle
+import time
+fav_things = ["lego","warcraft","friends"]
+save_file = open('save.txt','wb')
+pickle.dump(fav_things,save_file)
+save_file.close()
+time.sleep(2)
+load_file=open('save.txt','rb')
+load_fav_things=pickle.load(load_file)
+print(load_fav_things)
