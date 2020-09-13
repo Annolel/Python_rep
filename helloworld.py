@@ -370,7 +370,7 @@ print(car1.wheels)
 car3 = copy.copy(car1)
 car3.wheels = 6
 print(car1.wheels)
-"""
+
 import pickle
 import time
 fav_things = ["lego","warcraft","friends"]
@@ -381,3 +381,69 @@ time.sleep(2)
 load_file=open('save.txt','rb')
 load_fav_things=pickle.load(load_file)
 print(load_fav_things)
+"""
+import turtle
+import time
+t = turtle.Pen()
+t.reset()
+def mycircle(r,g,b,x):
+    t.color(r,g,b)
+    t.begin_fill()
+    t.circle(x)
+    t.end_fill()
+    input()
+def mysquare(size,filled):
+    if filled == True:
+        t.begin_fill()
+    for x in range(1, 5):
+        t.forward(size)
+        t.left(90)
+    if filled == True:
+        t.end_fill()
+    input()
+def mystar(size,filled):
+    if filled == True:
+        t.begin_fill()
+    for x in range (1,19):
+        t.forward(size)
+        if x % 2 == 0:
+            t.left(175)
+        else:
+            t.left(225)
+    if filled == True:
+        t.end_fill()
+    input()
+#задача 11.1 и 11.2
+def myoctagon(size,filled,shaped):
+    if filled == True:
+        t.begin_fill()
+    for x in range (1,9):
+        t.forward(size)
+        t.left(45)
+    if filled == True:
+        t.end_fill()
+    if shaped == True:
+        t.color(0,0,0)
+        myoctagon(size,0,0)
+    input()
+
+#задача 11.3
+def draw_star(size, a):
+    x = 180/a
+    y = 540/a
+    for i in range (1,a*2+1):
+        t.forward(size)
+        if i % 2 == 0:
+            t.right(x)
+        else:
+            t.left(y)
+    input()
+def draw_star1(size, points):
+    angle = 360 / points
+    for x in range(0, points):
+        t.forward(size)
+        t.left(180 - angle)
+        t.forward(size)
+        t.right(180-(angle * 2))
+    input()
+draw_star1(50,11)
