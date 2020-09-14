@@ -454,19 +454,38 @@ from tkinter import *
 import random
 def hello():
     print('hello there')
-def random_rectange(width,height,number):
-    for x in range(0, number):
-        x1=random.randrange(width)
-        y1=random.randrange(height)
-        x2=x1+random.randrange(width)
-        y2=y1+random.randrange(height)
-        canvas.create_rectangle(x1,y1,x2,y2)
+def random_rectange(width,height,number,color):
+    colors=['green','red','blue','orange','yellow','pink','purple','violet','magenta','cyan']
+    if (color == 'random'):
+        for x in range(0, number):
+            color=random.choice(colors)
+            x1=random.randrange(width)
+            y1=random.randrange(height)
+            x2=x1+random.randrange(width)
+            y2=y1+random.randrange(height)
+            canvas.create_rectangle(x1,y1,x2,y2,fill=color)
+    else:
+        for x in range(0, number):
+            x1=random.randrange(width)
+            y1=random.randrange(height)
+            x2=x1+random.randrange(width)
+            y2=y1+random.randrange(height)
+            canvas.create_rectangle(x1,y1,x2,y2,fill=color)
 tk=Tk()
 btn = Button(tk,text="click me",command=hello)
 #btn.pack()
 canvas = Canvas(tk, width=500, height=500)
 canvas.pack()
+"""
+canvas.create_arc(10, 10, 200, 80, extent=45, style=ARC)
+canvas.create_arc(10, 80, 200, 160, extent=90, style=ARC)
+canvas.create_arc(10, 160, 200, 240, extent=135, style=ARC)
+canvas.create_arc(10, 240, 200, 320, extent=180, style=ARC)
+canvas.create_arc(10, 320, 200, 400, extent=357, style=ARC)
 #canvas.create_line(0,0,500,500)
 #canvas.create_rectangle(10,10,50,50)
-random_rectange(400,400,100)
+"""
+canvas.create_polygon(10, 10, 100, 10, 100, 110, fill="", outline="black")
+canvas.create_polygon(200, 10, 240, 30, 120, 100, 140, 120, fill="",outline="black")
+canvas.create_text(250, 150, text='There once was a man from Toulouse,',fill='red',font=('Courier', 30))
 input()
