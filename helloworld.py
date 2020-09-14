@@ -381,7 +381,7 @@ time.sleep(2)
 load_file=open('save.txt','rb')
 load_fav_things=pickle.load(load_file)
 print(load_fav_things)
-"""
+
 import turtle
 import time
 t = turtle.Pen()
@@ -428,6 +428,7 @@ def myoctagon(size,filled,shaped):
     input()
 
 #задача 11.3
+#у меня вышла тупоконечная звезда, по факту тоже звезда)
 def draw_star(size, a):
     x = 180/a
     y = 540/a
@@ -438,6 +439,7 @@ def draw_star(size, a):
         else:
             t.left(y)
     input()
+#а в ответе остроконечная (180-х) я это не учел
 def draw_star1(size, points):
     angle = 360 / points
     for x in range(0, points):
@@ -446,4 +448,25 @@ def draw_star1(size, points):
         t.forward(size)
         t.right(180-(angle * 2))
     input()
-draw_star1(50,11)
+"""
+#глава 12
+from tkinter import *
+import random
+def hello():
+    print('hello there')
+def random_rectange(width,height,number):
+    for x in range(0, number):
+        x1=random.randrange(width)
+        y1=random.randrange(height)
+        x2=x1+random.randrange(width)
+        y2=y1+random.randrange(height)
+        canvas.create_rectangle(x1,y1,x2,y2)
+tk=Tk()
+btn = Button(tk,text="click me",command=hello)
+#btn.pack()
+canvas = Canvas(tk, width=500, height=500)
+canvas.pack()
+#canvas.create_line(0,0,500,500)
+#canvas.create_rectangle(10,10,50,50)
+random_rectange(400,400,100)
+input()
