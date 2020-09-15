@@ -448,7 +448,7 @@ def draw_star1(size, points):
         t.forward(size)
         t.right(180-(angle * 2))
     input()
-"""
+
 #глава 12
 from tkinter import *
 import random
@@ -476,7 +476,7 @@ btn = Button(tk,text="click me",command=hello)
 #btn.pack()
 canvas = Canvas(tk, width=500, height=500)
 canvas.pack()
-"""
+
 canvas.create_arc(10, 10, 200, 80, extent=45, style=ARC)
 canvas.create_arc(10, 80, 200, 160, extent=90, style=ARC)
 canvas.create_arc(10, 160, 200, 240, extent=135, style=ARC)
@@ -484,8 +484,110 @@ canvas.create_arc(10, 240, 200, 320, extent=180, style=ARC)
 canvas.create_arc(10, 320, 200, 400, extent=357, style=ARC)
 #canvas.create_line(0,0,500,500)
 #canvas.create_rectangle(10,10,50,50)
-"""
+
 canvas.create_polygon(10, 10, 100, 10, 100, 110, fill="", outline="black")
 canvas.create_polygon(200, 10, 240, 30, 120, 100, 140, 120, fill="",outline="black")
 canvas.create_text(250, 150, text='There once was a man from Toulouse,',fill='red',font=('Courier', 30))
+input()
+
+from tkinter import *
+tk = Tk()
+canvas = Canvas(tk, width=400,height=400)
+canvas.pack()
+my_image=PhotoImage(file='C:\\Users\\Gnom\\github\\Python_rep\\elf.gif')
+canvas.create_image(0,0,anchor=NW,image=my_image)
+input()
+
+import time
+from tkinter import *
+def movetriangle(event):
+    if event.keysym == 'Up':
+        canvas.move(1, 0, -3)
+        canvas.itemconfig(mytriangle, fill='blue')
+    elif event.keysym == 'Down':
+        canvas.move(1, 0, 3)
+        canvas.itemconfig(mytriangle, fill='yellow')
+    elif event.keysym == 'Left':
+        canvas.move(1, -3, 0)
+        canvas.itemconfig(mytriangle, fill='red')
+    else:
+        canvas.move(1, 3, 0)
+        canvas.itemconfig(mytriangle, fill='green')
+tk = Tk()
+canvas = Canvas(tk, width=400, height=400)
+canvas.pack()
+mytriangle=canvas.create_polygon(10, 10, 10, 60, 50, 35, fill='black')
+canvas.bind_all('<KeyPress-Up>',movetriangle)
+canvas.bind_all('<KeyPress-Down>',movetriangle)
+canvas.bind_all('<KeyPress-Left>',movetriangle)
+canvas.bind_all('<KeyPress-Right>',movetriangle)
+input()
+
+for x in range(0, 60):
+    canvas.move(1, 5, 5)
+    tk.update()
+    time.sleep(0.05)
+for x in range(0, 60):
+    canvas.move(1, -5, -5)
+    tk.update()
+    time.sleep(0.05)
+input()
+
+#Задача 12.1
+from tkinter import *
+import random
+tk = Tk()
+canvas = Canvas (tk, width=500,height=500)
+def task12_1():
+    colors=['green','red','blue','orange','yellow','pink','purple','violet','magenta','cyan','black']
+    for i in range (0, 10):
+        color=random.choice(colors)
+        x1=random.randrange(500)
+        y1=random.randrange(500)
+        x2=random.randrange(500)
+        y2=random.randrange(500)
+        x3=random.randrange(500)
+        y3=random.randrange(500)
+        canvas.create_polygon(x1, y1, x2, y2, x3, y3,fill=color,outline='black')
+task12_1():
+canvas.pack()
+input()
+
+#Задача 12.2
+import time
+from tkinter import *
+tk = Tk()
+canvas = Canvas(tk, width=400, height=400)
+canvas.pack()
+canvas.create_polygon(10, 10, 10, 60, 50, 35)
+for x in range(0, 60):
+    canvas.move(1, 5, 0)
+    tk.update()
+    time.sleep(0.05)
+for x in range(0, 60):
+    canvas.move(1, 0, 5)
+    tk.update()
+    time.sleep(0.05)
+for x in range(0, 60):
+    canvas.move(1, -5, 0)
+    tk.update()
+    time.sleep(0.05)
+for x in range(0, 60):
+    canvas.move(1, 0, -5)
+    tk.update()
+    time.sleep(0.05)
+input()
+"""
+#Задача 12.3
+from tkinter import *
+import time
+tk = Tk()
+canvas = Canvas(tk, width=400,height=400)
+canvas.pack()
+my_image=PhotoImage(file='C:\\Users\\Gnom\\github\\Python_rep\\gnom.gif')
+canvas.create_image(0,0,anchor=NW,image=my_image)
+for x in range(0, 50):
+    canvas.move(1, 5, 5)
+    tk.update()
+    time.sleep(0.05)
 input()
