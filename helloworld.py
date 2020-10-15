@@ -591,3 +591,15 @@ for x in range(0, 50):
     tk.update()
     time.sleep(0.05)
 input()
+
+
+
+
+"""
+        for x in L[0::2]:
+            for y in L[1::2]:
+                self.canvas.create_image(x*w,y*h,image=self.bg,anchor='nw')
+        for x in L[1::2]:
+            for y in L[0::2]:
+                self.canvas.create_image(x*w,y*h,image=self.bg,anchor='nw')
+"""
