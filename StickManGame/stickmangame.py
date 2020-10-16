@@ -161,6 +161,40 @@ class StickFigureSprite(Sprite):
         game.canvas.bind_all('<KeyPress-Right>', self.turn_right)
         game.canvas.bind_all('<space>', self.jump)
 
+    def turn_left(self, evt):
+        if self.y == 0:
+            self.x = -2
+
+    def turn_right(self, evt):
+        if self.y == 0:
+            self.x = 2
+
+    def jump(self, evt):
+        if self.y == 0:
+            self.y = -4
+            self.jump_count = 0
+    def animate(self):
+        if self.x != 0 and self.y == 0:
+            if time.time() - self.last_time > 0.1:
+                self.last_time = time.time()
+                self.current_image += self.current_image_add
+            if self.current_image >= 2:
+                self.current_image_add = -1
+            if self.current_image <= 0:
+                self.current_image_add = 1
+        if self.x < 0:
+            if self.y != 0:
+                self.game.canvas.itemconfig(self.image, image=self.images_left[2])
+            else:
+                self.game.canvas.itemconfig(self.image, image=self.images_left[self.current_image])
+        elif self.x > 0:
+            if self.y != 0:
+                self.game.canvas.itemconfig(self.image, image=self.images_right[2])
+            else:
+                self.game.canvas.itemconfig(self.image, image=self.images_right[self.current_image])
+
+
+
 g=Game()
 platform1 = PlatformSprite(g, PhotoImage(file="platform1.gif"), 0, 480, 100, 10)
 platform2 = PlatformSprite(g, PhotoImage(file="platform1.gif"), 150, 440, 100, 10)
